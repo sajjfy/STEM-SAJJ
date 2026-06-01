@@ -30,5 +30,6 @@
     "formal-methods"
   ],
   "skills": "./skills",
-  "commands": "./commands"
+  "commands": "./commands",
+  "mcp": "./.mcp.json"
 }

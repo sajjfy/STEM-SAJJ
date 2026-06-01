@@ -1,0 +1,9 @@
+{
+  "sajj-stem": {
+    "command": "node",
+    "args": ["${CLAUDE_PLUGIN_ROOT}/mcp-server/index.js"],
+    "env": {
+      "SAJJ_STEM_SKILLS_DIR": "${CLAUDE_PLUGIN_ROOT}/skills"
+    }
+  }
+}
