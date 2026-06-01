@@ -1,45 +1,111 @@
 # Sajj STEM Plugin
 
-**Author:** Sajifal Sulaiman
-**Version:** 2.0.0
-**Repository:** https://github.com/sajifalsulaiman124-dot/STEM-SAJJ
-**License:** MIT
+![Version](https://img.shields.io/badge/version-2.1.0-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Skills](https://img.shields.io/badge/skills-60%2B-orange)
+![Domains](https://img.shields.io/badge/domains-9-purple)
+![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-blueviolet)
+![MCP](https://img.shields.io/badge/MCP-server-teal)
 
-A comprehensive STEM expert plugin for Claude Code — 60+ skills across 9 domains covering Physics, Quantum Computing, Chemistry, Biology, Mathematics, Engineering, Design, Data Science, and Scientific Research.
+> A comprehensive STEM expert plugin for Claude Code — 60+ skills across 9 domains with a built-in MCP server for on-demand skill discovery.
+
+---
+
+## Overview
+
+```
+Physics · Quantum Computing · Chemistry · Biology
+Mathematics · Engineering · Design · Data Science · Research
+```
+
+When activated, this plugin turns Claude into a step-by-step STEM expert that automatically identifies the domain of your problem, loads the right specialist skill, and solves with full working shown at every step.
+
+---
+
+## Architecture
+
+```mermaid
+graph TD
+    User([User]) -->|/sajj-stem| CMD[Slash Command]
+    User -->|STEM question| MCP
+
+    CMD -->|loads full ruleset| Claude((Claude))
+    
+    MCP[MCP Server] -->|list_stem_domains| IDX[(Skill Index)]
+    MCP -->|search_stem_skills| IDX
+    MCP -->|get_stem_skill| IDX
+    MCP -->|route_stem_problem| IDX
+    IDX --> Claude
+
+    subgraph Skills [60+ Skill Files]
+        O[original/]
+        M[math/]
+        F[formal/]
+        P[physics/]
+        Q[quantum/]
+        C[chemistry/]
+        B[biology/]
+        D[data-science/]
+        R[research/]
+    end
+
+    IDX --- Skills
+```
 
 ---
 
 ## Installation
 
+**Step 1 — Add the marketplace:**
 ```bash
-claude plugin install https://github.com/sajifalsulaiman124-dot/STEM-SAJJ
+claude plugin marketplace add https://github.com/sajifalsulaiman124-dot/STEM-SAJJ
 ```
 
-After installing, activate the full STEM mode in any conversation:
+**Step 2 — Install the plugin:**
+```bash
+claude plugin install sajj-stem
+```
 
+**Step 3 — Restart Claude Code**, then activate in any session:
 ```
 /sajj-stem
 ```
 
 ---
 
+## MCP Server
+
+The plugin ships a built-in **MCP server** that provides 4 tools for dynamic skill discovery — Claude can search and load skills on demand instead of loading everything at once.
+
+| Tool | Description |
+|------|-------------|
+| `list_stem_domains` | List all 9 domains with skill counts and descriptions |
+| `search_stem_skills` | Full-text search across 60+ skills by keyword or topic |
+| `get_stem_skill` | Load the full content of any skill file on demand |
+| `route_stem_problem` | Given a problem, auto-detect domain and suggest the right skills |
+
+The MCP server starts automatically when the plugin loads. Skills are served from `skills/` relative to the installed plugin root.
+
+---
+
 ## What It Does
 
-When activated, the plugin turns Claude into a step-by-step STEM expert that:
+When activated, Claude applies these behaviours across all STEM domains:
 
-- Always states the formula or method before applying it
-- Shows full working with units at every step
-- Identifies the domain (physics, chemistry, biology, etc.) before solving
-- Routes problems to the correct specialist skill automatically
-- Checks answers via dimensional analysis and sanity checks
-- Uses SI units by default (m, kg, s, N, Pa, J, W)
-- Reports results to 3 significant figures unless specified otherwise
+- States the formula or method **before** applying it
+- Shows **full step-by-step working** with units at every step
+- **Identifies the domain** (physics, chemistry, biology, etc.) before solving
+- **Routes automatically** to the correct specialist skill
+- **Checks answers** via dimensional analysis and sanity checks
+- Uses **SI units** by default (m, kg, s, N, Pa, J, W)
+- Reports results to **3 significant figures** unless specified otherwise
+- Flags physically unreasonable results and re-checks
 
 ---
 
 ## Skill Index
 
-### Original Skills — `skills/original/`
+### Original Skills — `skills/original/` (6 skills)
 
 | Skill | Topics |
 |-------|--------|
@@ -52,8 +118,8 @@ When activated, the plugin turns Claude into a step-by-step STEM expert that:
 
 ---
 
-### Advanced Mathematics — `skills/math/`
-> Extracted from [cc-polymath](https://github.com/rand/cc-polymath)
+### Advanced Mathematics — `skills/math/` (11 skills)
+> Sourced from [cc-polymath](https://github.com/rand/cc-polymath)
 
 | Skill | Topics |
 |-------|--------|
@@ -71,8 +137,8 @@ When activated, the plugin turns Claude into a step-by-step STEM expert that:
 
 ---
 
-### Formal Methods — `skills/formal/`
-> Extracted from [cc-polymath](https://github.com/rand/cc-polymath)
+### Formal Methods — `skills/formal/` (10 skills)
+> Sourced from [cc-polymath](https://github.com/rand/cc-polymath)
 
 | Skill | Topics |
 |-------|--------|
@@ -89,8 +155,8 @@ When activated, the plugin turns Claude into a step-by-step STEM expert that:
 
 ---
 
-### Physics — `skills/physics/`
-> Extracted from [ordinary-claude-skills](https://github.com/Microck/ordinary-claude-skills)
+### Physics — `skills/physics/` (2 skills)
+> Sourced from [ordinary-claude-skills](https://github.com/Microck/ordinary-claude-skills)
 
 | Skill | Topics |
 |-------|--------|
@@ -99,8 +165,8 @@ When activated, the plugin turns Claude into a step-by-step STEM expert that:
 
 ---
 
-### Quantum Computing — `skills/quantum/`
-> Extracted from [ordinary-claude-skills](https://github.com/Microck/ordinary-claude-skills)
+### Quantum Computing — `skills/quantum/` (4 skills)
+> Sourced from [ordinary-claude-skills](https://github.com/Microck/ordinary-claude-skills)
 
 | Skill | Topics |
 |-------|--------|
@@ -111,8 +177,8 @@ When activated, the plugin turns Claude into a step-by-step STEM expert that:
 
 ---
 
-### Chemistry — `skills/chemistry/`
-> Extracted from [ordinary-claude-skills](https://github.com/Microck/ordinary-claude-skills)
+### Chemistry — `skills/chemistry/` (5 skills)
+> Sourced from [ordinary-claude-skills](https://github.com/Microck/ordinary-claude-skills)
 
 | Skill | Topics |
 |-------|--------|
@@ -124,8 +190,8 @@ When activated, the plugin turns Claude into a step-by-step STEM expert that:
 
 ---
 
-### Biology — `skills/biology/`
-> Extracted from [ordinary-claude-skills](https://github.com/Microck/ordinary-claude-skills)
+### Biology — `skills/biology/` (5 skills)
+> Sourced from [ordinary-claude-skills](https://github.com/Microck/ordinary-claude-skills)
 
 | Skill | Topics |
 |-------|--------|
@@ -137,8 +203,8 @@ When activated, the plugin turns Claude into a step-by-step STEM expert that:
 
 ---
 
-### Data Science & Scientific Computing — `skills/data-science/`
-> Extracted from [ordinary-claude-skills](https://github.com/Microck/ordinary-claude-skills)
+### Data Science & Scientific Computing — `skills/data-science/` (8 skills)
+> Sourced from [ordinary-claude-skills](https://github.com/Microck/ordinary-claude-skills)
 
 | Skill | Topics |
 |-------|--------|
@@ -153,8 +219,8 @@ When activated, the plugin turns Claude into a step-by-step STEM expert that:
 
 ---
 
-### Research Skills — `skills/research/`
-> Extracted from [ordinary-claude-skills](https://github.com/Microck/ordinary-claude-skills)
+### Research Skills — `skills/research/` (5 skills)
+> Sourced from [ordinary-claude-skills](https://github.com/Microck/ordinary-claude-skills)
 
 | Skill | Topics |
 |-------|--------|
@@ -168,7 +234,21 @@ When activated, the plugin turns Claude into a step-by-step STEM expert that:
 
 ## Domain Routing
 
-The plugin automatically routes problems to the right skill:
+The MCP server automatically routes problems to the right skill:
+
+```mermaid
+flowchart LR
+    P[Problem] --> R{Route}
+    R -->|quantum circuit / qubit / gate| Q[quantum/]
+    R -->|molecule / SMILES / drug| C[chemistry/]
+    R -->|DNA / RNA / gene / cell| B[biology/]
+    R -->|star / galaxy / FITS| PH[physics/astropy]
+    R -->|CFD / Navier-Stokes| FL[physics/fluidsim]
+    R -->|ODE / PDE / matrix| M[math/]
+    R -->|theorem / proof / Z3| F[formal/]
+    R -->|Bayesian / MCMC / regression| DS[data-science/]
+    R -->|paper / hypothesis / experiment| RE[research/]
+```
 
 | You ask about... | Skill activated |
 |-----------------|-----------------|
@@ -200,84 +280,30 @@ The plugin automatically routes problems to the right skill:
 
 ```
 STEM-SAJJ/
-├── plugin.md                          Main plugin entry point & skill index
-├── sajj-stem.md                       /sajj-stem slash command (full rules)
+├── .claude-plugin/
+│   ├── plugin.json                    Plugin manifest (v2.1.0)
+│   └── marketplace.json               Marketplace registration
+├── .mcp.json                          MCP server declaration
+├── mcp-server/
+│   ├── index.js                       MCP server (4 tools)
+│   └── package.json                   Dependencies
+├── commands/
+│   └── sajj-stem.md                   /sajj-stem slash command
+├── plugin.md                          Plugin entry point & skill index
+├── sajj-stem.md                       Full skill ruleset (slash command copy)
 ├── README.md                          This file
+├── LICENSE                            MIT
 │
 └── skills/
-    ├── original/                      Core STEM skills (6)
-    │   ├── applied-physics.md
-    │   ├── linear-algebra.md
-    │   ├── quantum.md
-    │   ├── engineering-math.md
-    │   ├── geometry.md
-    │   └── design-math.md
-    │
-    ├── math/                          Advanced mathematics (11) — cc-polymath
-    │   ├── differential-equations.md
-    │   ├── linear-algebra-computation.md
-    │   ├── numerical-methods.md
-    │   ├── probability-statistics.md
-    │   ├── optimization-algorithms.md
-    │   ├── abstract-algebra.md
-    │   ├── number-theory.md
-    │   ├── set-theory.md
-    │   ├── topology-point-set.md
-    │   ├── topology-algebraic.md
-    │   └── category-theory-foundations.md
-    │
-    ├── formal/                        Formal methods & theorem proving (10) — cc-polymath
-    │   ├── lean-theorem-proving.md
-    │   ├── lean-mathlib4.md
-    │   ├── lean-tactics.md
-    │   ├── lean-proof-basics.md
-    │   ├── sat-solving-strategies.md
-    │   ├── smt-theory-applications.md
-    │   ├── z3-solver-basics.md
-    │   ├── csp-modeling.md
-    │   ├── constraint-propagation.md
-    │   └── backtracking-search.md
-    │
-    ├── physics/                       Physics tools (2) — ordinary-claude-skills
-    │   ├── astropy.md
-    │   └── fluidsim.md
-    │
-    ├── quantum/                       Quantum computing (4) — ordinary-claude-skills
-    │   ├── cirq.md
-    │   ├── qiskit.md
-    │   ├── pennylane.md
-    │   └── qutip.md
-    │
-    ├── chemistry/                     Chemistry & materials (5) — ordinary-claude-skills
-    │   ├── rdkit.md
-    │   ├── deepchem.md
-    │   ├── cobrapy.md
-    │   ├── pymatgen.md
-    │   └── datamol.md
-    │
-    ├── biology/                       Biology & biosignals (5) — ordinary-claude-skills
-    │   ├── biopython.md
-    │   ├── scanpy.md
-    │   ├── scvi-tools.md
-    │   ├── neurokit2.md
-    │   └── scikit-bio.md
-    │
-    ├── data-science/                  Data science & computing (8) — ordinary-claude-skills
-    │   ├── sympy.md
-    │   ├── statsmodels.md
-    │   ├── pymc.md
-    │   ├── pymoo.md
-    │   ├── statistical-analysis.md
-    │   ├── scientific-visualization.md
-    │   ├── networkx.md
-    │   └── exploratory-data-analysis.md
-    │
-    └── research/                      Scientific research skills (5) — ordinary-claude-skills
-        ├── scientific-writing.md
-        ├── scientific-brainstorming.md
-        ├── scientific-critical-thinking.md
-        ├── literature-review.md
-        └── hypothesis-generation.md
+    ├── original/     (6)              Core STEM skills
+    ├── math/         (11)             Advanced mathematics — cc-polymath
+    ├── formal/       (10)             Formal methods — cc-polymath
+    ├── physics/      (2)              Physics tools — ordinary-claude-skills
+    ├── quantum/      (4)              Quantum computing — ordinary-claude-skills
+    ├── chemistry/    (5)              Chemistry & materials — ordinary-claude-skills
+    ├── biology/      (5)              Biology & biosignals — ordinary-claude-skills
+    ├── data-science/ (8)              Data science — ordinary-claude-skills
+    └── research/     (5)             Scientific research — ordinary-claude-skills
 ```
 
 ---
@@ -287,47 +313,47 @@ STEM-SAJJ/
 ```
 /sajj-stem
 
-> A beam of 6m with a 500N load at midpoint — find reactions at supports
-> Find eigenvalues of [[3,1],[1,3]] and interpret geometrically
-> Write a Cirq circuit for a Bell state and measure it 1000 times
-> Load a SMILES string for aspirin and calculate its LogP and TPSA
-> Parse a FASTA file and run a BLAST search against NCBI
-> Set up a Bayesian linear regression with PyMC
+> A beam of 6m with a 500N point load at midpoint — find reactions at supports
+> Find the eigenvalues of [[3,1],[1,3]] and interpret geometrically
+> Build a Cirq circuit for a Bell state and sample it 1000 times
+> Load aspirin as a SMILES string and calculate LogP and TPSA with RDKit
+> Parse a FASTA file and run a BLAST search against NCBI nt
+> Set up a Bayesian linear regression with PyMC and sample the posterior
 > What is the time evolution of |ψ⟩ = (|0⟩+|1⟩)/√2 under H = ℏω σ_z?
-> Design a hypothesis for why drug X reduces inflammation
-> Calculate the luminosity distance to a galaxy at z = 0.5
+> Formulate the Lotka-Volterra equations and analyse stability at equilibrium
+> Calculate the luminosity distance to a galaxy at z = 0.5 using Planck18
+> Prove that the sum of two even integers is even in Lean 4
 ```
+
+---
+
+## Changelog
+
+### v2.1.0
+- Added MCP server with 4 tools: `list_stem_domains`, `search_stem_skills`, `get_stem_skill`, `route_stem_problem`
+- Added `.mcp.json` for automatic MCP server wiring
+- Added `commands/` directory for proper slash command registration
+
+### v2.0.0
+- Restructured into 9 skill domains
+- Added 30 skills from ordinary-claude-skills: astropy, fluidsim, cirq, qiskit, pennylane, qutip, rdkit, deepchem, cobrapy, pymatgen, datamol, biopython, scanpy, scvi-tools, neurokit2, scikit-bio, sympy, statsmodels, pymc, pymoo, and more
+- Added `.claude-plugin/` manifests for marketplace install
+
+### v1.0.0
+- Initial release with 6 core STEM skills
 
 ---
 
 ## Credits
 
 Skills sourced and adapted from:
-- [cc-polymath](https://github.com/rand/cc-polymath) — Advanced math and formal methods skills
-- [ordinary-claude-skills](https://github.com/Microck/ordinary-claude-skills) — Scientific computing skills
+- [cc-polymath](https://github.com/rand/cc-polymath) — Advanced mathematics and formal methods
+- [ordinary-claude-skills](https://github.com/Microck/ordinary-claude-skills) — Scientific computing and research skills
 
 ---
 
 ## License
 
-MIT License
+MIT License — Copyright (c) 2026 Sajifal Sulaiman
 
-Copyright (c) 2026 Sajifal Sulaiman
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+See [LICENSE](./LICENSE) for full text.
