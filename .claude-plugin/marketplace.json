@@ -1,0 +1,16 @@
+{
+  "name": "sajj-stem",
+  "description": "Comprehensive STEM expert plugin — 60+ skills across 9 domains",
+  "owner": {
+    "name": "sajifalsulaiman124-dot",
+    "url": "https://github.com/sajifalsulaiman124-dot"
+  },
+  "plugins": [
+    {
+      "name": "sajj-stem",
+      "source": "./",
+      "description": "Comprehensive STEM expert plugin — 60+ skills across Physics, Quantum Computing, Chemistry, Biology, Mathematics, Engineering, Design, Data Science, and Scientific Research",
+      "version": "2.0.0"
+    }
+  ]
+}

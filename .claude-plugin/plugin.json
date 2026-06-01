@@ -1,0 +1,34 @@
+{
+  "name": "sajj-stem",
+  "version": "2.0.0",
+  "description": "Comprehensive STEM expert plugin — 60+ skills across Physics, Quantum Computing, Chemistry, Biology, Mathematics, Engineering, Design, Data Science, and Scientific Research",
+  "author": {
+    "name": "sajifalsulaiman124-dot"
+  },
+  "homepage": "https://github.com/sajifalsulaiman124-dot/STEM-SAJJ",
+  "repository": "https://github.com/sajifalsulaiman124-dot/STEM-SAJJ",
+  "license": "MIT",
+  "keywords": [
+    "stem",
+    "physics",
+    "mathematics",
+    "chemistry",
+    "biology",
+    "quantum",
+    "engineering",
+    "data-science",
+    "research",
+    "astropy",
+    "qiskit",
+    "cirq",
+    "pennylane",
+    "rdkit",
+    "biopython",
+    "sympy",
+    "pymc",
+    "lean4",
+    "formal-methods"
+  ],
+  "skills": "./skills",
+  "commands": "./commands"
+}
