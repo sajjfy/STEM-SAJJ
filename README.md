@@ -7,6 +7,10 @@
 ![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-blueviolet)
 ![MCP](https://img.shields.io/badge/MCP-server-teal)
 
+[![Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-pink?logo=github-sponsors)](https://github.com/sponsors/sajifalsulaiman124-dot)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-Support-ff5f5f?logo=ko-fi)](https://ko-fi.com/sajjstem)
+[![Gumroad](https://img.shields.io/badge/Gumroad-Lifetime%20Access-36c5f0)](https://gumroad.com/sajjstem)
+
 > A comprehensive STEM expert plugin for Claude Code — 60+ skills across 9 domains with a built-in MCP server for on-demand skill discovery.
 
 ---
@@ -341,6 +345,35 @@ STEM-SAJJ/
 
 ### v1.0.0
 - Initial release with 6 core STEM skills
+
+---
+
+## Premium
+
+The free plugin covers 60+ general STEM skills. The **Premium tier** adds deep problem banks, exam prep packs, and industry-specific workflows.
+
+```mermaid
+graph LR
+    FREE[Free Plugin<br/>60+ skills<br/>9 domains<br/>MCP server] -->|upgrade| SUP
+
+    subgraph Premium
+        SUP[Supporter — $5/mo<br/>Problem Banks<br/>Exam Packs]
+        PRO[Pro — $12/mo<br/>+ Industry Packs<br/>+ Deep Dives]
+        LIFE[Lifetime — $49<br/>Everything forever]
+    end
+```
+
+| Tier | Price | Includes |
+|------|-------|---------|
+| **Supporter** | $5/mo | 200+ worked problems (Mechanics, Calculus, LinearAlgebra, Stats), A-Level & IB exam packs |
+| **Pro** | $12/mo | Everything above + Industry packs (Drug Discovery, Quantum Hardware, Materials Science) + Deep Dives (Bayesian, Quantum ML) |
+| **Lifetime** | $49 one-time | All current + future premium content forever |
+
+**How it works:** Sponsor → open an issue with your GitHub username → get invited to the private premium repo.
+
+[![Sponsor on GitHub](https://img.shields.io/badge/Sponsor%20on%20GitHub-%E2%9D%A4-pink?logo=github-sponsors&style=for-the-badge)](https://github.com/sponsors/sajifalsulaiman124-dot)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-Buy%20Me%20a%20Coffee-ff5f5f?logo=ko-fi&style=for-the-badge)](https://ko-fi.com/sajjstem)
+[![Gumroad](https://img.shields.io/badge/Gumroad-Lifetime%20%2449-36c5f0?style=for-the-badge)](https://gumroad.com/sajjstem)
 
 ---
 
