@@ -353,21 +353,34 @@ The free plugin covers 60+ general STEM skills. The **Premium tier** adds deep p
 
 ```mermaid
 graph LR
-    FREE[Free Plugin<br/>60+ skills<br/>9 domains<br/>MCP server] -->|upgrade| SUP
+    FREE[Free — 60+ skills<br/>9 domains<br/>MCP server] -->|upgrade| SUP
 
-    subgraph Premium
+    subgraph Premium [Private Repo — github.com/sajjfy/STEM-SAJJ-Premium]
         SUP[Supporter — $5/mo<br/>Problem Banks<br/>Exam Packs]
-        PRO[Pro — $12/mo<br/>+ Industry Packs<br/>+ Deep Dives]
-        LIFE[Lifetime — $49<br/>Everything forever]
+        PRO[Pro — $12/mo<br/>+ 32 Complex Code Skills<br/>+ Industry Packs<br/>+ Deep Dives]
     end
 ```
 
 | Tier | Price | Includes |
 |------|-------|---------|
-| **Supporter** | $5/mo | 200+ worked problems (Mechanics, Calculus, Linear Algebra, Stats), A-Level & IB exam packs |
-| **Pro** | $12/mo | Everything above + Industry packs (Drug Discovery, Quantum Hardware, Materials Science) + Deep Dives (Bayesian, Quantum ML) |
+| **Free** | Free | 60+ skills across 9 STEM domains, MCP server, `/sajj-stem` command |
+| **Supporter** | $5/mo | 200+ worked problems (Mechanics, Calculus, Linear Algebra, Stats), A-Level & IB Physics exam packs with mark schemes |
+| **Pro** | $12/mo | Everything above, plus: |
 
-**How it works:** Sponsor → open an issue with your GitHub username → get invited to the private premium repo within 24h.
+**Pro tier includes 32 additional complex skills across 6 domains:**
+
+| Domain | Skills |
+|--------|--------|
+| Machine Learning | scikit-learn, PyTorch Lightning, Graph Neural Networks (PyG), Reinforcement Learning (SB3), SHAP explainability, UMAP |
+| Scientific Computing | Dask (parallel), Polars (fast DataFrames), Zarr (cloud arrays), LaminDB, PyDICOM (medical imaging) |
+| Visualization | Matplotlib, Seaborn, Plotly (interactive) |
+| Simulation | SimPy (discrete-event simulation) |
+| Distributed Systems | CAP theorem, Raft, Paxos, CRDTs, Vector Clocks, Event Sourcing, Consistent Hashing, Bloom Filters + more |
+| Programming Language Theory | Lambda Calculus, Type Systems, Operational Semantics, Curry-Howard, Dependent Types, Program Verification |
+
+**Also in Pro:** Drug Discovery pipeline (RDKit + DeepChem + ADMET), Quantum Hardware (IBM + Google real devices), Bayesian deep dive (hierarchical models, MCMC)
+
+**How it works:** Subscribe on Ko-fi → open an issue on this repo with your GitHub username → invited to the private repo within 24h.
 
 [![Sponsor on GitHub](https://img.shields.io/badge/Sponsor%20on%20GitHub-%E2%9D%A4-pink?logo=github-sponsors&style=for-the-badge)](https://github.com/sponsors/sajjfy)
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-Support-ff5f5f?logo=ko-fi&style=for-the-badge)](https://ko-fi.com/s/2d20bb069a)
