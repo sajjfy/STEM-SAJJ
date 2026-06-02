@@ -2,8 +2,8 @@
 
 ![Version](https://img.shields.io/badge/version-2.1.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Skills](https://img.shields.io/badge/skills-60%2B-orange)
-![Domains](https://img.shields.io/badge/domains-9-purple)
+![Skills](https://img.shields.io/badge/skills-93%2B-orange)
+![Domains](https://img.shields.io/badge/domains-15-purple)
 ![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-blueviolet)
 ![MCP](https://img.shields.io/badge/MCP-server-teal)
 

@@ -13,15 +13,15 @@ const SKILLS_DIR = process.env.SAJJ_STEM_SKILLS_DIR ?? join(__dir, "..", "skills
 // ── Domain metadata ──────────────────────────────────────────────────────────
 
 const DOMAINS = {
-  original:     "Core STEM — Applied Physics, Linear Algebra, Quantum Math, Engineering Math, Geometry, Design Math",
-  math:         "Advanced Mathematics — Differential Equations, Numerical Methods, Probability, Optimization, Abstract Algebra, Number Theory, Set Theory, Topology, Category Theory",
-  formal:       "Formal Methods — Lean 4 Theorem Proving, SAT/SMT Solving, Z3, Constraint Satisfaction",
-  physics:      "Physics Tools — Astropy (astronomy), Fluidsim (CFD / Navier-Stokes)",
-  quantum:      "Quantum Computing — Cirq, Qiskit, PennyLane, QuTiP",
-  chemistry:    "Chemistry & Materials — RDKit, DeepChem, COBRApy, PyMatGen, Datamol",
-  biology:      "Biology & Biosignals — BioPython, Scanpy, scvi-tools, NeuROKit2, scikit-bio",
-  "data-science": "Data Science — SymPy, PyMC, PyMoo, Statsmodels, NetworkX, EDA, Statistical Analysis, Scientific Visualization",
-  research:     "Scientific Research — Scientific Writing, Brainstorming, Critical Thinking, Literature Review, Hypothesis Generation",
+  original:      "Core STEM — Applied Physics, Linear Algebra, Quantum Math, Engineering Math, Geometry, Design Math",
+  math:          "Advanced Mathematics — Differential Equations, Numerical Methods, Probability, Optimization, Abstract Algebra, Number Theory, Set Theory, Topology, Category Theory",
+  formal:        "Formal Methods — Lean 4 Theorem Proving, SAT/SMT Solving, Z3, Constraint Satisfaction",
+  physics:       "Physics Tools — Astropy (astronomy), Fluidsim (CFD / Navier-Stokes)",
+  quantum:       "Quantum Computing — Cirq, Qiskit, PennyLane, QuTiP",
+  chemistry:     "Chemistry & Materials — RDKit, DeepChem, COBRApy, PyMatGen, Datamol",
+  biology:       "Biology & Biosignals — BioPython, Scanpy, scvi-tools, NeuROKit2, scikit-bio",
+  "data-science":"Data Science — SymPy, PyMC, PyMoo, Statsmodels, NetworkX, EDA, Statistical Analysis, Scientific Visualization",
+  research:      "Scientific Research — Scientific Writing, Brainstorming, Critical Thinking, Literature Review, Hypothesis Generation",
 };
 
 // ── Index builder ────────────────────────────────────────────────────────────
@@ -240,6 +240,7 @@ async function main() {
 
       if (/literature|paper|hypothesis|experiment|write.*paper|methodology|peer review/i.test(problem))
         routes.push({ domain: "research", reason: "scientific research keywords detected" });
+
 
       if (routes.length === 0) {
         // Fallback: search by the problem text
