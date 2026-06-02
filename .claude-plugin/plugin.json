@@ -1,6 +1,6 @@
 {
   "name": "sajj-stem",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Comprehensive STEM expert plugin — 60+ skills across Physics, Quantum Computing, Chemistry, Biology, Mathematics, Engineering, Design, Data Science, and Scientific Research",
   "author": {
     "name": "sajjfy"
@@ -31,5 +31,22 @@
   ],
   "skills": "./skills",
   "commands": "./commands",
-  "mcp": "./.mcp.json"
+  "mcp": "./.mcp.json",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd ${CLAUDE_PLUGIN_ROOT}/mcp-server && npm install --silent 2>/dev/null || true"
+          },
+          {
+            "type": "command",
+            "command": "echo 'sajj-stem v2.2.0 loaded (60+ STEM skills, 9 domains, MCP server ready). Use /sajj-stem to activate.'"
+          }
+        ]
+      }
+    ]
+  }
 }
