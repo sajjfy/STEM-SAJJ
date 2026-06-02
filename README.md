@@ -385,6 +385,26 @@ graph LR
 [![Sponsor on GitHub](https://img.shields.io/badge/Sponsor%20on%20GitHub-%E2%9D%A4-pink?logo=github-sponsors&style=for-the-badge)](https://github.com/sponsors/sajjfy)
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-Support-ff5f5f?logo=ko-fi&style=for-the-badge)](https://ko-fi.com/s/2d20bb069a)
 
+### Premium Installation
+
+Once you have been granted access to the private repo, run:
+
+```bash
+# Step 1 — Add the private marketplace
+claude plugin marketplace add https://github.com/sajjfy/STEM-SAJJ-Premium
+
+# Step 2 — Install the premium plugin
+claude plugin install sajj-stem-premium
+```
+
+Then restart Claude Code and activate with:
+
+```
+/sajj-stem-premium
+```
+
+> Both plugins can run side by side — `/sajj-stem` for the free tier, `/sajj-stem-premium` for advanced skills.
+
 ---
 
 ## Credits
