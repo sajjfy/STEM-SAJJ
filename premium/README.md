@@ -10,6 +10,6 @@ This directory is a placeholder. Premium content is delivered via private GitHub
 | Pro | $12/mo | Everything above + Industry Packs + Deep Dives |
 
 **Ko-fi:** https://ko-fi.com/s/2d20bb069a
-**GitHub Sponsors:** https://github.com/sponsors/sajifalsulaiman124-dot
+**GitHub Sponsors:** https://github.com/sponsors/sajjfy
 
 Once you subscribe, open an issue on this repo with your GitHub username to get access to the private premium repo within 24h.

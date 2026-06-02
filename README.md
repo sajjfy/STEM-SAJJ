@@ -7,7 +7,7 @@
 ![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-blueviolet)
 ![MCP](https://img.shields.io/badge/MCP-server-teal)
 
-[![Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-pink?logo=github-sponsors)](https://github.com/sponsors/sajifalsulaiman124-dot)
+[![Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-pink?logo=github-sponsors)](https://github.com/sponsors/sajjfy)
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-Support-ff5f5f?logo=ko-fi)](https://ko-fi.com/s/2d20bb069a)
 
 > A comprehensive STEM expert plugin for Claude Code — 60+ skills across 9 domains with a built-in MCP server for on-demand skill discovery.
@@ -61,7 +61,7 @@ graph TD
 
 **Step 1 — Add the marketplace:**
 ```bash
-claude plugin marketplace add https://github.com/sajifalsulaiman124-dot/STEM-SAJJ
+claude plugin marketplace add https://github.com/sajjfy/STEM-SAJJ
 ```
 
 **Step 2 — Install the plugin:**
@@ -369,7 +369,7 @@ graph LR
 
 **How it works:** Sponsor → open an issue with your GitHub username → get invited to the private premium repo within 24h.
 
-[![Sponsor on GitHub](https://img.shields.io/badge/Sponsor%20on%20GitHub-%E2%9D%A4-pink?logo=github-sponsors&style=for-the-badge)](https://github.com/sponsors/sajifalsulaiman124-dot)
+[![Sponsor on GitHub](https://img.shields.io/badge/Sponsor%20on%20GitHub-%E2%9D%A4-pink?logo=github-sponsors&style=for-the-badge)](https://github.com/sponsors/sajjfy)
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-Support-ff5f5f?logo=ko-fi&style=for-the-badge)](https://ko-fi.com/s/2d20bb069a)
 
 ---
